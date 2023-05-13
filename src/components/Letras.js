@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, letrasDesabilitadas, setLetrasDesabilitadas, novaArray, cont, setCont}) {
+export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, letrasDesabilitadas, setLetrasDesabilitadas, novaArray, cont, setCont, contadortrava}) {
 
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   const [ultimaLetraDesabilitada, setUltimaLetraDesabilitada] = useState("");
 
   function desabilitarBotao(indice) {
-    setBotaoDesabilitar(prevState => ({ ...prevState, [indice]: true }));
-    const letraDesabilitada = alfabeto[indice];
-    setLetrasDesabilitadas(prevState => [...prevState, letraDesabilitada]);
-    setUltimaLetraDesabilitada(letraDesabilitada);
+    if(contadortrava > 1) {
 
-    if (!novaArray.includes(letraDesabilitada)) {
+      setBotaoDesabilitar(prevState => ({ ...prevState, [indice]: true }));
+    letrasDesabilitadas = alfabeto[indice];
+    setLetrasDesabilitadas(prevState => [...prevState, letrasDesabilitadas]);
+    setUltimaLetraDesabilitada(letrasDesabilitadas);
+
+    if (!novaArray.includes(letrasDesabilitadas)) {
       setCont(cont + 1);
       console.log("Contador Não Acertos", cont)
+    }
+
     }
   }
 
