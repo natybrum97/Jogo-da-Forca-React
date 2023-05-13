@@ -9,15 +9,14 @@ import forca6 from '../assets/forca6.png';
 
 export default function Jogo(props) {
 
-    const { arrayLetras, setArrayLetras, novaArray, setNovaArray, letrasDesabilitadas, setLetrasDesabilitadas, cont, letra, setLetra, contadortrava, setContadorTrava } = props
+    const { arrayLetras, setArrayLetras, novaArray, setNovaArray, letrasDesabilitadas, setLetrasDesabilitadas, cont, setJogoIniciado} = props
 
     const [objetoSorteado, setObjetoSorteado] = useState('');
 
     function trocaPalavra() {
 
         setLetrasDesabilitadas([]);
-        setContadorTrava(contadortrava + 1)
-        alert(contadortrava);
+        setJogoIniciado(true);
         const indiceAleatorio = Math.floor(Math.random() * arrayLetras.length);
         const objetoSorteado = arrayLetras[indiceAleatorio];
         alert(objetoSorteado);

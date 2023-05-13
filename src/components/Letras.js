@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, letrasDesabilitadas, setLetrasDesabilitadas, novaArray, cont, setCont, contadortrava}) {
+export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, letrasDesabilitadas, setLetrasDesabilitadas, novaArray, cont, setCont, jogoIniciado, setJogoIniciado}) {
 
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   const [ultimaLetraDesabilitada, setUltimaLetraDesabilitada] = useState("");
 
   function desabilitarBotao(indice) {
-    if(contadortrava > 1) {
+  setJogoIniciado(false);
+  const letraClicada = alfabeto[indice];
+  setLetrasDesabilitadas([...letrasDesabilitadas, letraClicada]);
+  setUltimaLetraDesabilitada(letraClicada);
 
-      setBotaoDesabilitar(prevState => ({ ...prevState, [indice]: true }));
-    letrasDesabilitadas = alfabeto[indice];
-    setLetrasDesabilitadas(prevState => [...prevState, letrasDesabilitadas]);
-    setUltimaLetraDesabilitada(letrasDesabilitadas);
-
-    if (!novaArray.includes(letrasDesabilitadas)) {
-      setCont(cont + 1);
-      console.log("Contador Não Acertos", cont)
-    }
-
-    }
+  if (!novaArray.includes(letraClicada)) {
+    setCont(cont + 1);
+    console.log("Contador Não Acertos", cont);
   }
+
+}
+
 
   return (
     <div className='letras'>
@@ -27,7 +25,7 @@ export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, le
         <Letras 
           key={indice} 
           virtualkey={letra} 
-          botaoDesabilitar={botaoDesabilitar[indice]} 
+          botaoDesabilitar={!jogoIniciado || botaoDesabilitar[indice]} 
           desabilitarBotao={() => desabilitarBotao(indice)} 
         />
       ))}
@@ -37,7 +35,7 @@ export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, le
 
 function Letras(props) {
   return (
-    <button data-test="letter" className='button1' disabled={props.botaoDesabilitar} onClick={props.desabilitarBotao}>
+    <button data-test="letter" className= {props.botaoDesabilitar ? "disabled" : "enabled"} disabled={props.botaoDesabilitar} onClick={props.desabilitarBotao}>
       {props.virtualkey.toUpperCase()}
     </button>
   );

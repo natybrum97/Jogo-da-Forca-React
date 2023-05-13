@@ -114,7 +114,7 @@ body {
     margin-top: 59.33px;
 }
 
-.button1 {
+.disabled {
     height: 40px;
     width: 40px;
     border-radius: 3px;
@@ -131,6 +131,26 @@ body {
     margin-top: 11px;
     cursor: pointer;
 }
+
+.enabled {
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    border: 1px solid #7AA7C7;
+    background: #E1ECF4;
+    color: #39739D;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-right: 12px;
+    margin-top: 11px;
+    cursor: pointer;
+}
+
+
 
 .lateral {
     width: 323px;
