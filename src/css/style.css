@@ -1,0 +1,173 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+
+.container {
+    width: 934px;
+    height: 934px;
+    background-color: #FFFFFF;
+    margin-top: 59px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2 {
+    width: 934px;
+    height: 466.67px;
+    background-color: #FFFFFF;
+    ;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+}
+
+.imagem0 {
+    height: 466.67px;
+    width: 400px;
+}
+
+.imagem1 {
+    height: 466.67px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagem2 {
+    height: 466.67px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagem3 {
+    height: 466.67px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagem4 {
+    height: 466.67px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagem5 {
+    height: 466.67px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagem6 {
+    height: 466.67px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.button {
+    height: 60px;
+    width: 200px;
+    border-radius: 8px;
+    background-color: #27AE60;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.imagem1 {
+    height: 466.67px;
+    width: 400px;
+
+}
+
+.display {
+    display: none;
+}
+
+.letras {
+    width: 676px;
+    height: 102px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-top: 59.33px;
+}
+
+.button1 {
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    border: 1px solid #7AA7C7;
+    background: #9FAAB5;
+    color: #798A9F;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-right: 12px;
+    margin-top: 11px;
+    cursor: pointer;
+}
+
+.lateral {
+    width: 323px;
+    height: 466.67px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.word {
+    height: 56px;
+    width: 323px;
+    margin-top: 282px;
+    background-color: white;
+    display: flex;
+    justify-content: end;
+    font-family: Noto Sans;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.letracolorida {
+    width: 45px;
+    color: black;
+}
+
+.letravermelha {
+    width: 45px;
+    color: red;
+}
+
+.letraverde {
+    width: 45px;
+    color: green;
+}
