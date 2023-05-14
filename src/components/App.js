@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Jogo from './Jogo';
 import Letras from './Letras'
 import palavras from '../palavras';
+import Imput from './Imput'
 
 export default function App() {
 
@@ -19,6 +20,8 @@ export default function App() {
         <Jogo arrayLetras={arrayLetras} novaArray={novaArray} setNovaArray={setNovaArray} letrasDesabilitadas={letrasDesabilitadas} setLetrasDesabilitadas={setLetrasDesabilitadas} cont={cont} setCont={setCont} setJogoIniciado = {setJogoIniciado} />
 
         <Letras letrasDesabilitadas={letrasDesabilitadas} setLetrasDesabilitadas={setLetrasDesabilitadas} cont={cont} setCont={setCont} novaArray={novaArray} jogoIniciado={jogoIniciado} />
+
+        <Imput jogoIniciado={jogoIniciado} />
 
       </div>
 
