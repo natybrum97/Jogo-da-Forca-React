@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import forca0 from '../assets/forca0.png';
 import forca1 from '../assets/forca1.png';
 import forca2 from '../assets/forca2.png';
@@ -9,13 +8,12 @@ import forca6 from '../assets/forca6.png';
 
 export default function Jogo(props) {
 
-    const { arrayLetras, setArrayLetras, novaArray, setNovaArray, letrasDesabilitadas, setLetrasDesabilitadas, cont, setJogoIniciado} = props
-
-    const [objetoSorteado, setObjetoSorteado] = useState('');
+    const { arrayLetras, novaArray, setNovaArray, letrasDesabilitadas, setLetrasDesabilitadas, cont, setCont, setJogoIniciado} = props
 
     function trocaPalavra() {
 
         setLetrasDesabilitadas([]);
+        setCont(0);
         setJogoIniciado(true);
         const indiceAleatorio = Math.floor(Math.random() * arrayLetras.length);
         const objetoSorteado = arrayLetras[indiceAleatorio];
@@ -35,7 +33,7 @@ export default function Jogo(props) {
             <div className='lateral'>
                 <button data-test="choose-word" className='button' onClick={trocaPalavra}>Escolher Palavra</button>
                 <div data-test="word"  className='word'>
-                   <Letras array={letrasDesabilitadas} cont={cont} novaArray={novaArray} objetoSorteado={objetoSorteado} setJogoIniciado={setJogoIniciado} />
+                   <Letras array={letrasDesabilitadas} cont={cont} novaArray={novaArray} setJogoIniciado={setJogoIniciado} />
                 </div>
             </div>
 
@@ -44,15 +42,11 @@ export default function Jogo(props) {
     )
 }
 
-// className={props.cont < 6 ? "letraverde" : props.cont === 6 ? "letravermelha" : "letracolorida" }
-
 function Letras(props) {
     let palavramisteriosa = props.novaArray.map((letra) => {return props.array.includes(letra) ? letra : "_"} )
-    console.log(props.cont)
+    
     let classe = "";
-    console.log(palavramisteriosa)
-    console.log(props.novaArray)
-    console.log(palavramisteriosa.join('') === props.novaArray.join(''))
+    
     if(palavramisteriosa.join('') === props.novaArray.join('')) {
         props.setJogoIniciado(false);
     classe = "letraverde";

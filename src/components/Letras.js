@@ -1,4 +1,4 @@
-export default function Letraporletra({botaoDesabilitar, setBotaoDesabilitar, letrasDesabilitadas, setLetrasDesabilitadas, novaArray, cont, setCont, jogoIniciado, setJogoIniciado}) {
+export default function Letraporletra({letrasDesabilitadas, setLetrasDesabilitadas, novaArray, cont, setCont, jogoIniciado}) {
 
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
