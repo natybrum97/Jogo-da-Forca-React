@@ -7,15 +7,9 @@ export default function App() {
 
   let [arrayLetras, setArrayLetras] = useState([...palavras]);
   let [novaArray, setNovaArray] = useState([]);
-  const [botaoDesabilitar, setBotaoDesabilitar] = useState((
-    'abcdefghijklmnopqrstuvwxyz'.split('').reduce((acc, letra) => {
-      acc[letra] = false;
-      return acc;
-    }, {})
-  ));
+  const [botaoDesabilitar, setBotaoDesabilitar] = useState({});
   const [letrasDesabilitadas, setLetrasDesabilitadas] = useState([]);
   let [cont, setCont] = useState(0);
-  let [contnormal, setContNormal] = useState(0);
   const [letra, setLetra] = useState('');
   const [jogoIniciado, setJogoIniciado] = useState(false);
 
