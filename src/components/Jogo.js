@@ -8,10 +8,11 @@ import forca6 from '../assets/forca6.png';
 
 export default function Jogo(props) {
 
-    const { arrayLetras, novaArray, setNovaArray, letrasDesabilitadas, setLetrasDesabilitadas, cont, setCont, setJogoIniciado} = props
+    const { arrayLetras, novaArray, setNovaArray, letrasDesabilitadas, setLetrasDesabilitadas, cont, setCont, setJogoIniciado, classe, setClasse, adivinhouPalavra, setAdivinhouPalavra} = props
 
     function trocaPalavra() {
 
+        setAdivinhouPalavra(false);
         setLetrasDesabilitadas([]);
         setCont(0);
         setJogoIniciado(true);
@@ -32,8 +33,8 @@ export default function Jogo(props) {
 
             <div className='lateral'>
                 <button data-test="choose-word" className='button' onClick={trocaPalavra}>Escolher Palavra</button>
-                <div data-test="word"  className='word'>
-                   <Letras array={letrasDesabilitadas} cont={cont} novaArray={novaArray} setJogoIniciado={setJogoIniciado} />
+                <div data-test="word" className='word'>
+                    <Letras array={letrasDesabilitadas} cont={cont} novaArray={novaArray} setJogoIniciado={setJogoIniciado} classe={classe} setClasse={setClasse} adivinhouPalavra={adivinhouPalavra} setAdivinhouPalavra={setAdivinhouPalavra} />
                 </div>
             </div>
 
@@ -43,21 +44,25 @@ export default function Jogo(props) {
 }
 
 function Letras(props) {
-    let palavramisteriosa = props.novaArray.map((letra) => {return props.array.includes(letra) ? letra : "_"} )
-    
-    let classe = "";
-    
-    if(palavramisteriosa.join('') === props.novaArray.join('')) {
+    let palavramisteriosa = props.novaArray.map((letra) => { return props.array.includes(letra) ? letra : "_" })
+
+    props.setClasse("");
+
+    if (palavramisteriosa.join('') === props.novaArray.join('') || props.adivinhouPalavra) {
         props.setJogoIniciado(false);
-    classe = "letraverde";
+        const outravar = "letraverde"
+        props.setClasse(outravar)
+        palavramisteriosa = props.novaArray;
     } else if (props.cont === 6) {
         props.setJogoIniciado(false);
-    classe = "letravermelha"
-    palavramisteriosa = props.novaArray;
-    } 
-    
+        const outravar1 = "letravermelha"
+        props.setClasse(outravar1)
+        palavramisteriosa = props.novaArray;
+    }
+
+    console.log(props.classe)
+
     return (
-        <div className={classe}>{palavramisteriosa.join(' ')}</div>
+        <div className={props.classe}>{palavramisteriosa.join(' ')}</div>
     );
 }
-  
