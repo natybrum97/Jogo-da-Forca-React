@@ -18,8 +18,6 @@ export default function Jogo(props) {
         setJogoIniciado(true);
         const indiceAleatorio = Math.floor(Math.random() * arrayLetras.length);
         const objetoSorteado = arrayLetras[indiceAleatorio];
-        alert(objetoSorteado);
-
         setNovaArray(objetoSorteado.split(''));
         /*console.log(setNovaArray(objetoSorteado.split('')))*/
     }
